@@ -29,7 +29,7 @@ int depth(const binary_tree_t *node)
 int is_perfect(const binary_tree_t *root, int d, int level)
 {
 	if (root == NULL)
-		return (1);
+		return (0);
 
 	if (root->left == NULL && root->right == NULL)
 		return (d == level + 1);
