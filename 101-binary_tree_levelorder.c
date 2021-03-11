@@ -9,22 +9,26 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-        int left_height, right_height;
+	int left_height, right_height;
 
-        if (!tree)
-                return (0);
-        if (tree->left == NULL && tree->right == NULL)
-                return (0);
-        left_height = binary_tree_height(tree->left);
-        right_height = binary_tree_height(tree->right);
+	if (!tree)
+		return (0);
+	if (tree->left == NULL && tree->right == NULL)
+		return (0);
+	left_height = binary_tree_height(tree->left);
+	right_height = binary_tree_height(tree->right);
 
-        if (left_height > right_height)
-                return (left_height + 1);
-        else
-                return (right_height + 1);
+	if (left_height > right_height)
+		return (left_height + 1);
+	else
+		return (right_height + 1);
 }
 
 /**
+ * traverse_level - apply func on nodes in the given level
+ * @tree: root of the binary tree
+ * @lvl: level of the traversal
+ * @func: function to apply on each node
  *
  */
 void traverse_level(const binary_tree_t *tree, int lvl, void (*func)(int))
